@@ -32,7 +32,15 @@ LINQ Method Syntax:
   var res = db.Songs.Where(s=>s.SongName=="Bad Blood").First();
   Console.WriteLine(res.SongYear);
 ```
+- Grouping
+```
+  var groups = db.Songs.GroupBy(s => s.SongAlbum );
 
+  foreach(var group in groups)
+  {
+      Console.WriteLine(group.Key+' '+group.Count());
+  }
+```
 ## Update
 - Updating entities can be done by modifying entites directly and saving them to database.
 ```
